@@ -8,7 +8,6 @@ module Spree
       if user.supplier
         can [:admin, :manage], Spree::SupplierBankAccount, supplier_id: user.supplier_id
         can :create, Spree::SupplierBankAccount
-        can :create, Spree::Product
       end
     end
   end
