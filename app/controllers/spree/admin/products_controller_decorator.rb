@@ -30,7 +30,7 @@ Spree::Admin::ProductsController.class_eval do
         params[:q] ||= {}
         params[:q][:deleted_at_null] ||= "1"
         params[:q][:not_discontinued] ||= "1"
-        params[:q][:no_available_date_set] ||= "1"
+        params[:q][:available_date_set] ||= "1"
 
         params[:q][:s] ||= "name asc"
         @collection = super
