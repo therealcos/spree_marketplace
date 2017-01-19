@@ -24,11 +24,5 @@ Spree::Admin::ProductsController.class_eval do
       @product.add_supplier!(try_spree_current_user.supplier_id)
     end
   end
-
-  def stock
-    @variants = @product.variants.includes(*variant_stock_includes)
-    @variants = [@product.master] if @variants.empty?
-    @stock_locations = StockLocation.accessible_by(current_ability, :read)
-  end
   
 end
