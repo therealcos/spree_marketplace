@@ -8,7 +8,7 @@ Spree::Admin::ProductsController.class_eval do
   private
 
   def new
-    authorize! :create, Spree::Product
+    authorize! :create, Spree::StockLocation
   end
 
   def get_suppliers
