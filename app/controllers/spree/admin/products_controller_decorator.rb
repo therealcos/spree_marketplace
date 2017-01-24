@@ -7,6 +7,10 @@ Spree::Admin::ProductsController.class_eval do
 
   private
 
+  def new
+    authorize! :create, Spree::Product
+  end
+
   def get_suppliers
     @suppliers = Spree::Supplier.order(:name)
   end
