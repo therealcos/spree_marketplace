@@ -4,7 +4,7 @@ Spree::Admin::StockMovementsController.class_eval do
 
   def redirect_to_profile
   	if try_spree_current_user.try(:supplier?)
-    	redirect_to spree.admin_products_path
+    	redirect_to spree.edit_admin_supplier_path
     end
   end 
   
