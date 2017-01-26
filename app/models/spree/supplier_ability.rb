@@ -35,19 +35,19 @@ module Spree
           product.supplier_ids.include?(user.supplier_id)
         end
         can [:admin, :create, :index], Spree::Product
-        # can [:admin, :manage], Spree::ProductProperty, product: { supplier_ids: user.supplier_id }
+        can [:admin, :manage], Spree::ProductProperty, product: { supplier_ids: user.supplier_id }
         can [:admin, :manage, :stock], Spree::ProductProperty do |property|
           property.product.supplier_ids.include?(user.supplier_id)
         end
         can [:admin, :index, :read], Spree::Property
         can [:admin, :read], Spree::Prototype
         can [:admin, :manage, :read, :ready, :ship], Spree::Shipment, order: { state: 'complete' }, stock_location: { supplier_id: user.supplier_id }
-        # can [:admin, :create, :update], :stock_items
-        # can [:admin, :manage], Spree::StockItem, stock_location_id: user.supplier.stock_locations.pluck(:id)
+        can [:admin, :create, :update], :stock_items
+        can [:admin, :manage], Spree::StockItem, stock_location_id: user.supplier.stock_locations.pluck(:id)
         # can [:admin, :manage], Spree::StockLocation, supplier_id: user.supplier_id
         # can :create, Spree::StockLocation
         # can [:admin, :manage], Spree::StockMovement, stock_item: { stock_location_id: user.supplier.stock_locations.pluck(:id) }
-        # can :create, Spree::StockMovement
+        can :create, Spree::StockMovement
         can [:admin, :update], Spree::Supplier, id: user.supplier_id
         # TODO: Want this to be inline like:
         # can [:admin, :manage], Spree::Variant, supplier_ids: user.supplier_id
