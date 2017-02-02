@@ -1,6 +1,3 @@
-<% content_for :page_actions do %>
-  <li><%= button_link_to Spree.t(:cancel), spree.edit_admin_supplier_path(@supplier), :icon => 'icon-arrow-left' %></li>
-<% end %>
 
 <% content_for :page_title do %>
    <%= I18n.t '.new_bank_account' %>
@@ -10,15 +7,15 @@
 
 <%= form_for @object, url: spree.admin_supplier_bank_accounts_path(@supplier) do |f| %>
   <%= f.field_container :account_number do %>
-    <%= f.label :account_number %>:<br />
+    <%= f.label :account_number %>
     <%= f.text_field :account_number %>
   <% end %>
   <%= f.field_container :routing_number do %>
-    <%= f.label :routing_number %>:<br />
+    <%= f.label :routing_number %>
     <%= f.text_field :routing_number %>
   <% end %>
   <%= f.field_container :country_iso do %>
-    <%= f.label :country_iso, Spree.t(:country) %>:<br />
+    <%= f.label :country_iso, Spree.t(:country) %>
     <%= f.collection_select :country_iso, available_countries, :iso, :name, {selected: 'US'}, {class: 'select2'} %>
   <% end %>
   <%= f.hidden_field :masked_number %>
