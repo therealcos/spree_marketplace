@@ -1,0 +1,6 @@
+<!-- insert_top "[data-hook='supplier_right_column_wrapper']" -->
+
+<div id="admin_profile_picture">
+	<%= image_tag @supplier.profile_picture.url(:medium) %>
+	<%= form.file_field :profile_picture %>
+</div>
