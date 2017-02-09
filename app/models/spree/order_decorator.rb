@@ -10,11 +10,6 @@ Spree::Order.class_eval do
     			:source  => "adsfasdfasdf"
   			)
 
-			puts "Customer is..."
-  			puts customer
-
-  			customer.notify
-
 			if SpreeDropShip::Config[:send_supplier_email] && shipment.supplier.present?
 			    begin
 			      Spree::DropShipOrderMailer.supplier_order(shipment.id).deliver!
