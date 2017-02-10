@@ -16,11 +16,10 @@
     <%= f.label :routing_number %>
     <%= f.text_field :routing_number %>
   <% end %>
-  <%= f.field_container :country_iso do %>
-    <%= f.label :country_iso, Spree.t(:country) %>
-    <%= f.collection_select :country_iso, available_countries, :iso, :name, {selected: 'US'}, {class: 'select2'} %>
+  <%= f.field_container :type do %>
+    <%= f.label :type, Spree.t(:type) %>
+    <%= f.select :type, [['checking', "POO"], ['savings', "YARR"]] %>
   <% end %>
-  <%= f.hidden_field :masked_number %>
   <%= f.hidden_field :name %>
   <%= f.hidden_field :token %>
   <%= f.submit Spree.t(:save) %>
