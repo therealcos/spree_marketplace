@@ -53,7 +53,6 @@ RSpec.configure do |config|
   config.before :suite do
     DatabaseCleaner.strategy = :transaction
     DatabaseCleaner.clean_with :truncation
-    Stripe.api_key = 'sk_test_2K6AkjxetfMFks2xBoGKB6wy'
   end
 
   # Before each spec check if it is a Javascript test and switch between using database transactions or not where necessary.
