@@ -6,9 +6,7 @@ module Spree
     belongs_to :supplier
 
     validates :name,           presence: true
-    validates :type,           presence: true
     validates :supplier,       presence: true
-    validates :token,          presence: true, uniqueness: true
 
   end
 end
