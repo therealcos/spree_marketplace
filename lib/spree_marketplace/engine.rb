@@ -15,7 +15,7 @@ module SpreeMarketplace
       SpreeMarketplace::Config = Spree::MarketplaceConfiguration.new
     end
 
-        config.after_initialize do
+    config.after_initialize do
       Stripe.api_key = SpreeMarketplace::Config[:stripe_secret_key]
     end
 
