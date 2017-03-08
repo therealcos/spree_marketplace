@@ -1,4 +1,6 @@
-class Spree::SuppliersController < Spree::StoreController
+module Spree
+  module Admin
+    class CarouselSlides < ResourceController
 
   before_filter :check_if_supplier, only: [:create, :new]
   # ssl_required
