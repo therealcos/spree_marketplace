@@ -18,9 +18,6 @@ class Spree::Admin::SupplierBankAccountsController < Spree::Admin::ResourceContr
     end
 
     def set_supplier
-      @supplier.bank_accounts.each do |account|
-        account.destroy
-      end
       @object.supplier = @supplier
     end
 
