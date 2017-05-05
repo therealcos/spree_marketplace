@@ -1,8 +1,0 @@
-<div id="supplier-related-products" class="col-md-12">
-<div class="section-title">
-	<% unless @product.suppliers.empty? %>
-		<h1><%= Spree.t(:more_products_by) %> <%= @product.suppliers.first.name %></h1>
-	</div>
-	<%= render :partial => 'spree/shared/products', :locals => { :products => @product.suppliers.first.products[0..3] } %>
-	<% end %>
-</div>
