@@ -5,9 +5,10 @@ Spree::Supplier.class_eval do
 	has_many :bank_accounts, class_name: 'Spree::SupplierBankAccount'
 	has_attached_file :profile_picture, 
                     dependent: :destroy, 
-                    :styles => {:medium => "300x300>", :thumb => "100x100>"}, 
-                    :path => ":rails_root/public/spree/suppliers/:id/:style/:filename", 
-                    :url => "/spree/suppliers/:id/:style/:filename",
+                    styles: {:medium => "300x300>", :thumb => "100x100>"}, 
+                    path: "/spree/suppliers/:id/:style/:filename", 
+                    default_url: "/spree/suppliers/:id/:style/:filename",
+                    default_style:  "medium",
                     s3_credentials: {
                       access_key_id:     Rails.application.secrets.aws_access_key_id,
                       secret_access_key: Rails.application.secrets.aws_secret_access_key,
