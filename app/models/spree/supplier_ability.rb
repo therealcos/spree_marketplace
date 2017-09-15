@@ -14,7 +14,7 @@ module Spree
           can :create, Spree::Digital
         end
         can [:admin, :manage], Spree::Image do |image|
-          image.variants.first.product.supplier_ids.include?(user.supplier_id)
+          image.viewable.product.supplier_ids.include?(user.supplier_id)
         end
         can :create, Spree::Image
         if SpreeMarketplace::Engine.spree_group_price_available?
