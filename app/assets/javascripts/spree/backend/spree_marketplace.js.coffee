@@ -5,7 +5,8 @@ $(document).ready ->
     $('.new_supplier_bank_account').submit ->
       if $('#supplier_bank_account_token').val() == ''
         Stripe.bankAccount.createToken({
-            country: $('#supplier_bank_account_country_iso').val(),
+            country: $('#s2id_autogen1').val(),
+            currency: $('#s2id_autogen2').val(),
             routingNumber: $('#supplier_bank_account_routing_number').val(),
             accountNumber: $('#supplier_bank_account_account_number').val(),
         }, stripeBankAccountResponseHandler);
