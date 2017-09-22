@@ -9,6 +9,8 @@ $(document).ready ->
             currency: $('#s2id_autogen2').val(),
             routingNumber: $('#supplier_bank_account_routing_number').val(),
             accountNumber: $('#supplier_bank_account_account_number').val(),
+            account_holder_name: $('#supplier_bank_account_holder_name').val(),
+            account_holder_type: 'company'
         }, stripeBankAccountResponseHandler);
         return false
 
