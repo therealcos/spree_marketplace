@@ -16,7 +16,6 @@ $(document).ready ->
 
 stripeBankAccountResponseHandler = (status, response) ->
   if response.error
-    $('#stripeError').html(response.error.message)
     $('#stripeError').show()
   else
     $('#supplier_bank_account_account_number').prop("disabled" , true);
