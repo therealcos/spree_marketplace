@@ -5,12 +5,12 @@ $(document).ready ->
     $('.new_supplier_bank_account').submit ->
       if $('#supplier_bank_account_token').val() == ''
         Stripe.bankAccount.createToken({
-            country: $('#s2id_autogen1').val(),
-            currency: $('#s2id_autogen2').val(),
+            country: $('#supplier_bank_account_country').val(),
+            currency: $('#supplier_bank_account_currency').val(),
             routingNumber: $('#supplier_bank_account_routing_number').val(),
             accountNumber: $('#supplier_bank_account_account_number').val(),
             account_holder_name: $('#supplier_bank_account_holder_name').val(),
-            account_holder_type: 'company'
+            account_holder_type: $('#supplier_bank_account_holder_type').val()
         }, stripeBankAccountResponseHandler);
         return false
 
