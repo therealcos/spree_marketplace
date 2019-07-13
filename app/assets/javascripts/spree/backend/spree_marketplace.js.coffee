@@ -16,11 +16,12 @@ $(document).ready ->
 
 stripeBankAccountResponseHandler = (status, response) ->
   if response.error
-    $('#stripeError').show()
+    console.log(response.error);
+    $('#stripeError').show();
   else
     $('#supplier_bank_account_account_number').prop("disabled" , true);
     $('#supplier_bank_account_routing_number').prop("disabled" , true);
-    $('#supplier_bank_account_masked_number').val('xxxxxx' + response['bank_account']['last4'])
-    $('#supplier_bank_account_name').val(response['bank_account']['bank_name'])
-    $('#supplier_bank_account_token').val(response['id'])
-    $('.new_supplier_bank_account').submit()
+    $('#supplier_bank_account_masked_number').val('xxxxxx' + response['bank_account']['last4']);
+    $('#supplier_bank_account_name').val(response['bank_account']['bank_name']);
+    $('#supplier_bank_account_token').val(response['id']);
+    $('.new_supplier_bank_account').submit();
