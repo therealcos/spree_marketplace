@@ -42,7 +42,6 @@ class Spree::SuppliersController < Spree::StoreController
   end
 
   def new
-    authorize! :create, Spree::Supplier
     @supplier = Spree::Supplier.new
     @supplier.active = false
   end
