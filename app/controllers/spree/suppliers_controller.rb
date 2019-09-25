@@ -9,8 +9,6 @@ class Spree::SuppliersController < Spree::StoreController
 	end
 
   def create
-    authorize! :create, Spree::Supplier
-
     @supplier = Spree::Supplier.new(supplier_params)
 
     # Dont sign in as the newly created user if users already signed in.
@@ -35,7 +33,7 @@ class Spree::SuppliersController < Spree::StoreController
 
     if @supplier.save
       flash[:success] = Spree.t('supplier_registration.create.success')
-      redirect_to spree.account_path
+      redirect_to spree.edit_admin_supplier_url(@supplier)
     else
       render :new
     end
