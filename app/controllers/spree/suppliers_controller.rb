@@ -48,7 +48,7 @@ class Spree::SuppliersController < Spree::StoreController
 
   def check_if_supplier
     if spree_current_user and spree_current_user.supplier?
-      flash[:error] = Spree.t('supplier_registration.already_signed_up')
+      flash[:error] = Spree.t(:already_supplier)
       redirect_to spree.account_path and return
     end
   end
