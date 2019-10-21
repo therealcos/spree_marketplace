@@ -32,6 +32,7 @@ class Spree::SuppliersController < Spree::StoreController
     @supplier.email = spree_current_user.email if spree_current_user
 
     if @supplier.save
+      Spree::Backend::Config.locale = 'ja'
       flash[:success] = Spree.t(:supplier_created)
       redirect_to spree.edit_admin_supplier_url(@supplier)
     else
