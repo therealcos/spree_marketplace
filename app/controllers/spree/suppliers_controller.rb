@@ -19,6 +19,8 @@ class Spree::SuppliersController < Spree::StoreController
           flash[:error] = Spree.t(:user_exists)
           render :new and return
         end
+        @user.supplier_admin = true
+        @user.save!
       else
         @user = Spree.user_class.new(email: params[:supplier][:email], password: params[:supplier].delete(:password), password_confirmation: params[:supplier].delete(:password_confirmation), supplier_admin: true)
         @user.save!
