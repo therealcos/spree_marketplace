@@ -20,7 +20,7 @@ class Spree::SuppliersController < Spree::StoreController
           render :new and return
         end
       else
-        @user = Spree.user_class.new(email: params[:supplier][:email], password: params[:supplier].delete(:password), password_confirmation: params[:supplier].delete(:password_confirmation))
+        @user = Spree.user_class.new(email: params[:supplier][:email], password: params[:supplier].delete(:password), password_confirmation: params[:supplier].delete(:password_confirmation), supplier_admin: true)
         @user.save!
         session[:spree_user_signup] = true
       end
