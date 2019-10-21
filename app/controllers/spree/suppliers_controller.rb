@@ -16,7 +16,7 @@ class Spree::SuppliersController < Spree::StoreController
       # Find or create user for email.
       if @user = Spree.user_class.find_by_email(params[:supplier][:email])
         unless @user.valid_password?(params[:supplier][:password])
-          flash[:error] = Spree.t('supplier_registration.create.invalid_password')
+          flash[:error] = Spree.t(:user_exists)
           render :new and return
         end
       else
