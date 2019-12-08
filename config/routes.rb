@@ -5,5 +5,5 @@ Spree::Core::Engine.routes.draw do
       resources :bank_accounts, controller: 'supplier_bank_accounts'
     end
   end
-  resources :suppliers, only: [:show, :new, :create]
+  # resources :suppliers, only: [:show, :new, :create]
 end
